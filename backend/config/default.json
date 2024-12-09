@@ -1,0 +1,44 @@
+{
+    "database": {
+      "connectionLimit": 10,
+      "connectTimeout": 10000
+    },
+    "server": {
+      "port": 5000,
+      "bodyLimit": "100kb"
+    },
+    "authentication": {
+      "jwtSecret": "your_jwt_secret",
+      "tokenExpiration": "1h",
+      "refreshTokenExpiration": "7d"
+    },
+    "security": {
+      "saltRounds": 10,
+      "passwordMinLength": 8,
+      "allowedLoginAttempts": 5,
+      "loginLockoutDuration": 15
+    },
+    "features": {
+      "enableSocialLogin": true,
+      "enableTwoFactorAuth": false
+    },
+    "email": {
+      "fromAddress": "noreply@gymsystem.com",
+      "supportEmail": "support@gymsystem.com"
+    },
+    "logging": {
+      "level": "info",
+      "maxSize": "10m",
+      "maxFiles": 5
+    },
+    "payment": {
+      "stripePublishableKey": "",
+      "stripeSecretKey": ""
+    },
+    "integrations": {
+      "aiChatbot": {
+        "provider": "openai",
+        "enabled": true
+      }
+    }
+  }

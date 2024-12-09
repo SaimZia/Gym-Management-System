@@ -1,0 +1,53 @@
+{
+    "database": {
+      "connectionLimit": 50,
+      "connectTimeout": 30000
+    },
+    "server": {
+      "port": 80,
+      "bodyLimit": "500kb"
+    },
+    "authentication": {
+      "jwtSecret": "${PROD_JWT_SECRET}",
+      "tokenExpiration": "2h",
+      "refreshTokenExpiration": "14d"
+    },
+    "security": {
+      "saltRounds": 12,
+      "passwordMinLength": 12,
+      "allowedLoginAttempts": 3,
+      "loginLockoutDuration": 30
+    },
+    "features": {
+      "enableSocialLogin": true,
+      "enableTwoFactorAuth": true
+    },
+    "email": {
+      "fromAddress": "noreply@prodgymsystem.com",
+      "supportEmail": "support@prodgymsystem.com"
+    },
+    "logging": {
+      "level": "error",
+      "maxSize": "50m",
+      "maxFiles": 10
+    },
+    "payment": {
+      "stripePublishableKey": "${PROD_STRIPE_PUBLISHABLE_KEY}",
+      "stripeSecretKey": "${PROD_STRIPE_SECRET_KEY}"
+    },
+    "integrations": {
+      "aiChatbot": {
+        "provider": "openai",
+        "enabled": true,
+        "productionApiKey": "${PROD_OPENAI_API_KEY}"
+      }
+    },
+    "monitoring": {
+      "enableNewRelic": true,
+      "enableDatadog": true
+    },
+    "deployment": {
+      "environment": "production",
+      "region": "us-east-1"
+    }
+  }
